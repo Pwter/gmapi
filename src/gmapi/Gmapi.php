@@ -1,8 +1,6 @@
 <?php
 
-namespace pwter\Gmapi;
-
-use pwter\Gmapi;
+namespace pwter;
 
 class Gmapi
 {
