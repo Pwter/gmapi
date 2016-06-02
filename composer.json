@@ -1,0 +1,11 @@
+{
+    "name": "pwter/gmapi",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/pwter/gmapi"
+        }
+    ],
+    "require": {
+    }
+}
