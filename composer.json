@@ -9,7 +9,7 @@
     "require": {
     },
     "autoload": {
-        "psr-4": {"": "src/"}
+        "psr-0": {"": "src/"}
     },
     "version": "0.0.3"
 }
