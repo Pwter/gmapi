@@ -9,7 +9,7 @@
     "require": {
     },
     "autoload": {
-        "psr-4": {"pwter\\gmapi\\": "src/gmapi"}
+        "psr-4": {"gmapi\\": "src/gmapi"}
     },
     "version": "0.0.2"
 }
