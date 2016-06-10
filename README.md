@@ -18,9 +18,9 @@ composer.json:
 
 > >composer install
 
-### **example**
+### **basic example**
 
-    <?php
+<?php
     use pwter\gmapi;
     require_once('vendor/autoload.php');
 
@@ -28,7 +28,9 @@ composer.json:
         'width' => '800',
         'height' => '600',
         'lat' => '47.4984',
-        'lng' => '19.0408'
+        'lng' => '19.0408',
+        'zoom' => 10,
+        'map-type' => 'TERRAIN' // ROADMAP, HYBRID, SATELLITE
     ));
 
     ?>
@@ -41,3 +43,10 @@ composer.json:
         <?= $gmapi->drawMap() ?>
     </body>
     </html>
+
+### **add a marker**
+    
+    $gmapi->addMarker(array(
+        'lat' => '47.4984',
+        'lng' => '19.0408'
+    ));

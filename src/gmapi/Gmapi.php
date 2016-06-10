@@ -12,9 +12,9 @@ class Gmapi
         $this->properties = $options;
     }
 
-    public function addMarker()
+    public function addMarker($options)
     {
-        $this->markers[] = 'myCenter';
+        $this->markers[] = $options;
     }
 
     public function drawMap()
@@ -29,11 +29,9 @@ class Gmapi
 
         // add markers as data-tags for js
         if (count($this->markers) > 0) {
-            $map .= ' data-markers=\'{"position":';
-            foreach ($this->markers as $value) {
-                $map .= '"'.$value.'"';
+            foreach ($this->markers as $key => $marker) {
+                $map .= ' data-marker'. $key .'="'.$marker['lat'].';'.$marker['lng'].'"';
             }
-            $map .= '}\'';
         }
 
         $map .= '></div>'

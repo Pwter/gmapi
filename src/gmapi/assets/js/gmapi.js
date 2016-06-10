@@ -12,14 +12,23 @@ function initialize() {
 
     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-    var m = $('#googleMap').data('markers');
+    var markerId = 0;
+    while ($('#googleMap').data('marker-'+markerId) != 'undefined') {
+        var markerLat = $('#googleMap').data('marker-'+markerId).split(';')[0];
+        var markerLng = $('#googleMap').data('marker-'+markerId).split(';')[1];
+        var myCenter = new google.maps.LatLng(markerLat,markerLng);
+        var marker = new google.maps.Marker({
+            position:myCenter,
+        });
+        marker.setMap(map);
+        markerId++;
+    }
 
-    var myCenter = new google.maps.LatLng(lat,lng);
     var marker=new google.maps.Marker({
-        position:myCenter,
-      });
+            position:myCenter,
+          });
 
-    marker.setMap(map);
+        marker.setMap(map);
 
 }
 
