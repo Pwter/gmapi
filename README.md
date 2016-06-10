@@ -20,7 +20,7 @@ composer.json:
 
 ### **basic example**
 
-<?php
+    <?php
     use pwter\gmapi;
     require_once('vendor/autoload.php');
 
@@ -45,7 +45,7 @@ composer.json:
     </html>
 
 ### **add a marker**
-    
+
     $gmapi->addMarker(array(
         'lat' => '47.4984',
         'lng' => '19.0408'
