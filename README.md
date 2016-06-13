@@ -33,6 +33,15 @@ composer.json:
         'map-type' => 'TERRAIN' // ROADMAP, HYBRID, SATELLITE
     ));
 
+    $gmapi->addMarker(array(
+        'lat' => '47.4984',
+        'lng' => '19.0408',
+        'title' => 'Center!',
+        'animation' => 'BOUNCE', // DROP
+        'icon' => 'http://icongal.com/gallery/image/446949/map_marker_bubble_azure_google_marker.png',
+    ));
+
+
     ?>
     <!DOCTYPE html>
     <html>
@@ -48,5 +57,8 @@ composer.json:
 
     $gmapi->addMarker(array(
         'lat' => '47.4984',
-        'lng' => '19.0408'
+        'lng' => '19.0408',
+        'title' => 'Center!',
+        'animation' => 'BOUNCE', // DROP
+        'icon' => 'http://icongal.com/gallery/image/446949/map_marker_bubble_azure_google_marker.png',
     ));

@@ -14,12 +14,25 @@ function initialize() {
 
     var markerId = 0;
     while ($('#googleMap').data('marker-'+markerId) != 'undefined') {
-        var markerLat = $('#googleMap').data('marker-'+markerId).split(';')[0];
-        var markerLng = $('#googleMap').data('marker-'+markerId).split(';')[1];
+        var markerLat   = $('#googleMap').data('marker-'+markerId).split(';')[0];
+        var markerLng   = $('#googleMap').data('marker-'+markerId).split(';')[1];
+        var markerTitle = $('#googleMap').data('marker-'+markerId).split(';')[2];
+        var markerAnim  = $('#googleMap').data('marker-'+markerId).split(';')[3];
+        var markerIcon  = $('#googleMap').data('marker-'+markerId).split(';')[4];
+
         var myCenter = new google.maps.LatLng(markerLat,markerLng);
         var marker = new google.maps.Marker({
             position:myCenter,
         });
+        if (markerTitle != '') {
+            marker.setTitle(markerTitle);
+        }
+        if (markerAnim != '') {
+            marker.setAnimation(google.maps.Animation[markerAnim]);
+        }
+        if (markerIcon != '') {
+            marker.setIcon(markerIcon);
+        }
         marker.setMap(map);
         markerId++;
     }
