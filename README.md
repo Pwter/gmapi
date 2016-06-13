@@ -39,6 +39,7 @@ composer.json:
         'title' => 'Center!',
         'animation' => 'BOUNCE', // DROP
         'icon' => 'http://icongal.com/gallery/image/446949/map_marker_bubble_azure_google_marker.png',
+        'infowindow' => '<h1>Hello</h1>',
     ));
 
 

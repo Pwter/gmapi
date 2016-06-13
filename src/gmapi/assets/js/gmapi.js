@@ -14,11 +14,12 @@ function initialize() {
 
     var markerId = 0;
     while ($('#googleMap').data('marker-'+markerId) != 'undefined') {
-        var markerLat   = $('#googleMap').data('marker-'+markerId).split(';')[0];
-        var markerLng   = $('#googleMap').data('marker-'+markerId).split(';')[1];
-        var markerTitle = $('#googleMap').data('marker-'+markerId).split(';')[2];
-        var markerAnim  = $('#googleMap').data('marker-'+markerId).split(';')[3];
-        var markerIcon  = $('#googleMap').data('marker-'+markerId).split(';')[4];
+        var markerLat        = $('#googleMap').data('marker-'+markerId).split(';')[0];
+        var markerLng        = $('#googleMap').data('marker-'+markerId).split(';')[1];
+        var markerTitle      = $('#googleMap').data('marker-'+markerId).split(';')[2];
+        var markerAnim       = $('#googleMap').data('marker-'+markerId).split(';')[3];
+        var markerIcon       = $('#googleMap').data('marker-'+markerId).split(';')[4];
+        var markerInfoWindow = $('#googleMap').data('marker-'+markerId).split(';')[5];
 
         var myCenter = new google.maps.LatLng(markerLat,markerLng);
         var marker = new google.maps.Marker({
@@ -33,7 +34,18 @@ function initialize() {
         if (markerIcon != '') {
             marker.setIcon(markerIcon);
         }
+        if (markerInfoWindow != '') {
+            var infowindow = new google.maps.InfoWindow({
+                content: markerInfoWindow,
+            });
+            infowindow.open(map, marker);
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+
+        }
         marker.setMap(map);
+        if (marker)
         markerId++;
     }
 

@@ -30,7 +30,7 @@ class Gmapi
         // add markers as data-tags for js
         if (count($this->markers) > 0) {
             foreach ($this->markers as $key => $marker) {
-                $map .= ' data-marker'. $key .'="'.$marker['lat'].';'.$marker['lng'].';'.$marker['title'].';'.$marker['animation'].';'.$marker['icon'].'"';
+                $map .= ' data-marker'. $key .'="'.$marker['lat'].';'.$marker['lng'].';'.$marker['title'].';'.$marker['animation'].';'.$marker['icon'].';'.$marker['infowindow'].'"';
             }
         }
 
